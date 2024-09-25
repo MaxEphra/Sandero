@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcelas Sandero - Comprador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+        label, .info {
+            margin: 10px 0 5px;
+            display: block;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 96%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        a.button {
+            display: block;
+            width: 96%;
+            padding: 10px;
+            background-color: #25D366;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a.button:hover {
+            background-color: #20b355;
+        }
+        table {
+            width: 98%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        .paid {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px;
+        }
+        .pending {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .image-container {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>CONTROLE DE PARCELAS</h2>
+        <h3>SANDERO EZH4968</h3>
+        <label for="valorParcela">Valor da Parcela (R$):</label>
+        <input type="text" id="valorParcela" value="500,00" disabled>
+
+        <label for="custoTransferencia">Transferência Veicular (R$):</label>
+        <input type="text" id="custoTransferencia" placeholder="0.00"disabled>
+
+        <label for="dataPagamento">Pagamento:</label>
+        <input type="text" id="dataPagamento" placeholder="Mensal"disabled>
+
+        <label for="parcelasPagas">Parcelas Pagas (1 a 50):</label>
+        <input type="text" id="parcelasPagas" placeholder="2"disabled>
+
+        <div class="image-container">
+            <img src="./img/Sandero.jpg" alt="Imagem do Sandero">
+        </div>
+
+
+        <div class="info" id="totalPagar">
+            <p>Total a Pagar: R$ 25.000,00</p>
+            <p>Custos Transferência Veicular: R$ 0,00</p>
+            <p>Total Pago: R$ 1.000,00</p>
+            <p>Total Remanescente a Pagar: R$ 24.000,00</p>
+        </div>
+
+        <table id="tabelaParcelas">
+            <thead>
+                <tr>
+                    <th>Nº Parcela</th>
+                    <th>Valor (R$)</th>
+                    <th>Data de Pagamento</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>500,00</td>
+                    <td>24/08/24</td>
+                    <td class="paid">Liquidado</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>500,00</td>
+                    <td>24/08/24</td>
+                    <td class="paid">Liquidado</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>500,00</td>
+                    <td>25/09/24</td>
+                    <td class="paid">Liquidado</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>21</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>22</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>23</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>26</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>28</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>29</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>31</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>32</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>33</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>34</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>35</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>36</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>37</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>38</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>39</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>41</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>42</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>43</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>44</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>45</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>46</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>47</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>48</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>49</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td>500,00</td>
+                    <td></td>
+                    <td class="pending">Pendente</td>
+                </tr>
+                <a href="./contratopdf/CONTRATO_DE_COMPRA_E_VENDA_SANDERO_ISRAEL-assinado_assinado.pdf" download="Contrato_Compra_Venda_Sandero.pdf" class="button">Baixar Contrato em PDF</a>
+            </tbody>
+        </table>
+        <a href="https://wa.me/5511989321702" target="_blank" class="button">WhatsApp Comprador</a>
+    </div>
+</body>
+</html>
+
+
+
+
